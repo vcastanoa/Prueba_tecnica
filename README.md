@@ -18,3 +18,9 @@ All the libraries are easily installables with pip, you can use this command in 
 All the scripts in the src subdirectory are functionals independtly, each one has independt tests and examples of use. To compile all the project (from the download of the AWS files to the generation of the map) all you have to do is replace the 'key.txt' file in the subdirectory /api/ with your own API keys and compile the main.py script. Feel free to explore and run the individual scripts within the subdirectory.
 
 The input files with the address are already uploaded to AWS, however, in the main code there is also code to upload local files to AWS S3.
+
+# Output map
+The map is saved as an HTML file (google_map.html) in the map folder. To view the map:
+
+- Copy the google_map.html file located in the map folder.
+- Open the HTML file using a web browser.
