@@ -71,10 +71,17 @@ class DocumentProcessor:
 
 if __name__ == "__main__":
     # AWS credentials
-    aws_access_key = "AKIA5TMFX5LBQQ3ZAOOF"
-    aws_secret_key = "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"
-    bucket_name = "retobanco"
+    with open("../api/keys.txt", "r") as f:
+        # Read the file
+        input_string = f.read()
 
+        # Close the file
+        f.close()
+
+    aws_access_key = re.search(r'aws_access_key = "(.*)"', input_string).group(1)
+    aws_secret_key = re.search(r'aws_secret_key = "(.*)"', input_string).group(1)
+    bucket_name = re.search(r'bucket_name = "(.*)"', input_string).group(1)
+    
     # Create a DocumentProcessor object
     document_processor = DocumentProcessor(
         aws_access_key=aws_access_key,
